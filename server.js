@@ -25,9 +25,8 @@ server.on('request', (request, response) => {
 
 			// これがないと css が読みなかったりする
 			const extname = path.extname(filename);
-			console.log(extname);
-
 			response.writeHead(200, {'Content-Type': mime[extname]});
+
 			response.write(file);
 			response.end();
 		});
