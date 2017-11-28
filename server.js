@@ -2,7 +2,7 @@ const http = require('http')
 const path = require('path')
 const url = require('url')
 const fs = require("fs")
-const port = process.env.PORT || 1339
+const port = process.env.PORT || 5000
 const mime = {
 		".html": "text/html",
 		".css": "text/css",
@@ -34,4 +34,4 @@ server.on('request', (request, response) => {
 	});
 
 })
-server.listen(port, '127.0.0.1')
+server.listen(port)
