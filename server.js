@@ -5,7 +5,8 @@ const fs = require("fs")
 const port = process.env.PORT || 1339
 const mime = {
 		".html": "text/html",
-		".css": "text/css"
+		".css": "text/css",
+		".js": "text/javascript"
 }
 
 const server = http.createServer()
@@ -24,6 +25,7 @@ server.on('request', (request, response) => {
 
 			// これがないと css が読みなかったりする
 			const extname = path.extname(filename);
+			console.log(extname);
 
 			response.writeHead(200, {'Content-Type': mime[extname]});
 			response.write(file);
@@ -33,4 +35,4 @@ server.on('request', (request, response) => {
 	});
 
 })
-server.listen(port, 'localhost')
+server.listen(port, '127.0.0.1')
